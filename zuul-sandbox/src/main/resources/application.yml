@@ -11,6 +11,6 @@ ribbon:
 
 zuul:
   routes:
-    books:
-      path: /api/book/**
+    publications:
+      path: /api/publication/**
       url: http://localhost:8090

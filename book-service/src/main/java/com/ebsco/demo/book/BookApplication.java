@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 public class BookApplication {
 
-  @RequestMapping(value = "/available", method = RequestMethod.GET)
-  public String available() {
-    return "Spring in Action";
+  @RequestMapping(value = "/magazine", method = RequestMethod.GET)
+  public Publication getMagazine() {
+    return new Publication("Fine Woodworking");
   }
 
-  @RequestMapping(value = "/checked-out", method = RequestMethod.GET)
-  public String checkedOut() {
-    return "Spring Boot in Action";
+  @RequestMapping(value = "/book", method = RequestMethod.GET)
+  public Publication getBook() {
+    return new Publication("Don Quixote");
   }
 
   public static void main(String[] args) {
