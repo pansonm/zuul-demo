@@ -1,0 +1,57 @@
+buildscript {
+	ext {
+		springBootVersion = '1.4.0.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	
+	dependencies {		
+		classpath "io.spring.gradle:dependency-management-plugin:0.6.0.RELEASE"
+	}
+}
+
+plugins {
+	id 'java'
+	id 'eclipse'	
+	id 'maven'
+	id 'idea'
+	
+	// Spring plugins
+	id "org.springframework.boot" version "1.4.3.RELEASE"
+	id "io.spring.dependency-management" version "0.6.0.RELEASE"
+}
+
+// Compilation settings
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+ext {
+	groupId					= 'com.ebsco.demo'
+	artifactId				= 'zuul-sandbox'
+	versionNumber			= '0.0.1-SNAPSHOT'
+}
+
+repositories {
+	mavenCentral()
+	flatDir {
+		dirs 'libs'
+	}
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-netflix:1.2.4.RELEASE"
+	}
+}
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.cloud:spring-cloud-starter-zuul')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+jar {
+	baseName = 'zuul-sandbox'
+	version = '0.0.1-SNAPSHOT'
+}

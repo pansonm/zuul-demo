@@ -1,0 +1,16 @@
+spring:  
+  application:
+    name: zuuldemo
+
+server:  
+  port: 8080
+
+ribbon:
+  eureka:
+    enabled: false
+
+zuul:
+  routes:
+    books:
+      path: /api/book/**
+      url: http://localhost:8090
