@@ -15,7 +15,12 @@ public class GatewayApplication {
   }
 
   @Bean
-  public SimpleFilter simpleFilter() {
-    return new SimpleFilter();
+  public LogRequestFilter logRequestFilter() {
+    return new LogRequestFilter();
+  }
+
+  @Bean
+  public AddResponseHeaderFilter addResponseHeaderFilter() {
+    return new AddResponseHeaderFilter();
   }
 }
