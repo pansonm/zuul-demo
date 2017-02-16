@@ -21,6 +21,6 @@ From the book-service and zuul-sandbox directories:
 ## How to access
 From a browser (or curl) send a GET request to:
 
-http://localhost:8080/api/book/checked-out or
+<http://localhost:8080/api/book/checked-out> or
 
-http://localhost:8080/api/book/available
+<http://localhost:8080/api/book/available>
