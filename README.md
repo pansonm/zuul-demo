@@ -24,3 +24,5 @@ From a browser (or curl) send a GET request to:
 <http://localhost:8080/api/publication/book> or
 
 <http://localhost:8080/api/publication/magazine>
+
+## Try adding your own routes and filters
